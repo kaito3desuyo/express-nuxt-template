@@ -1,5 +1,5 @@
 module.exports = {
     head: {
-        titleTemplate: '%s - Nuxt.js',
+        titleTemplate: "%s - Nuxt.js"
     }
 }
