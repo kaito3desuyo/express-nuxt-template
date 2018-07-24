@@ -1,9 +1,9 @@
-const express = require("express")
-const { Nuxt, Builder } = require("nuxt")
+import express from "express"
+import { Nuxt, Builder } from "nuxt"
+import config from "./../client/nuxt.config.js"
 
 const app = express()
 
-let config = require("./nuxt.config.js")
 config.dev = !(process.env.NODE_ENV === "production")
 const nuxt = new Nuxt(config)
 
@@ -12,9 +12,9 @@ if (config.dev) {
     builder.build()
 }
 
-const api = require("./api")
+import api from "./api"
 
 app.use("/api", api)
 app.use(nuxt.render)
 
-module.exports = app
+export default app
